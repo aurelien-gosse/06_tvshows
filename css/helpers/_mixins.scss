@@ -1,0 +1,50 @@
+// ▬▬▬▬ B A S I C    M I X I N S ▬▬▬▬
+
+@mixin columns($divider : 2) {
+  width: calc(100% / #{$divider});
+}
+
+// ▬▬▬▬ P O S I T I O N I N G ▬▬▬▬
+
+@mixin posa($top:50%, $left:50%, $x:-50%, $y:-50%) {
+  position: absolute;
+  top: $top; left: $left;
+  transform: translate($x, $y);
+}
+
+@mixin flex($d:'row', $w:'nowrap', $j-c:'space-between', $a-i:'center') {
+  display: flex;
+  flex-flow: $d $w;
+  justify-content: $j-c;
+	align-items: $a-i;
+}
+
+// ▬▬▬▬ F O N T   M I X I N S ▬▬▬▬
+
+
+@mixin myfont($ff:'arial', $fz:16px) {
+  font-family: $ff;
+  font-size: $fz;
+  // font-weight: $fw;
+  // font-style: $fs;
+}
+
+// ▬▬▬▬ B U T T O N ▬▬▬▬
+
+
+@mixin button($text, $background) {
+  background: $background;		//variable
+  border-radius: 10px;
+  color: $text;				   //variable
+  padding: 0 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+// ▬▬▬▬ E X A M P L E ▬▬▬▬
+
+//button {
+//  @include button(red, blue);
+//  @include posa($top:20%);
+//}

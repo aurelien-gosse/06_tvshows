@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>📺 Tv Shows 📺</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+    <body>
+		<!-- loader -->
+		<div class="loader">
+			<img src="img/cat.gif" alt="loader">
+			<!-- <div class="spinner"></div> -->
+		</div>
+		<img src="img/logo.jpg" class="top-img">
+    	<nav>
+        	<button class="change" data-tv="top_rated">Les meilleures séries</button>
+        	<button class="change" data-tv="popular">Les plus populaires</button>
+      		<button class="change" data-tv="on_the_air">Séries actuelles</button>
+        	<button class="change" data-tv="airing_today">Ce soir à la TV</button>
+        </nav>
+		
+		<div class="tv"></div>
+		<div class="single-tv"></div>
+		<button class="close"></button>
+
+				<!-- Handlebars Start -->
+				<script id="entry-template" type="text/x-handlebars-template">
+					{{#each this}}
+					<div class="tv-show" id="{{id}}">
+					  <h1>{{name}}</h1>
+					  <div class="body active">
+						<img src="//image.tmdb.org/t/p/w500/{{poster_path}}">
+						<div class="pop">Popularité<span>{{vote_average}}/10</span></div>
+					  </div>
+					</div>
+					{{/each}}
+				  </script>
+				  <!-- Handlebars End --> 
+		  
+				  <!-- Handlebars Start -->
+				  <script id="single-tv-show" type="text/x-handlebars-template">
+					  <div>
+						  <img src="//image.tmdb.org/t/p/w500/{{poster_path}}">
+					  </div>
+					  <div>
+						  <h1>{{name}}</h1>
+						  <p>{{overview}}</p>
+						  <div><strong>Note moyenne</strong> : {{vote_average}}/10</div>
+					  </div>
+				  </script>
+				  <!-- Handlebars End -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
